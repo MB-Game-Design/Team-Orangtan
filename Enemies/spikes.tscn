@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://dqvtaf5mg2bwx"]
+
+[ext_resource type="Texture2D" uid="uid://cvrofcpxfai0" path="res://Platform Game Assets/Enemies/png/32x32/Spike_Up.png" id="1_2trmb"]
+[ext_resource type="Script" path="res://Enemies/spikes.gd" id="1_m1hm7"]
+
+[node name="Spikes" type="Area2D"]
+script = ExtResource("1_m1hm7")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_2trmb")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(0, 16, 16, 7, 0, -16, -16, 6)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

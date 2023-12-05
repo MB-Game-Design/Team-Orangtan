@@ -1,0 +1,166 @@
+[gd_scene load_steps=38 format=3 uid="uid://1dc244qfsq3c"]
+
+[ext_resource type="Script" path="res://Water/Water.gd" id="1_uryss"]
+[ext_resource type="Texture2D" uid="uid://brmtx10w1clhr" path="res://Platform Game Assets/Water Animation/png/1x/image 1.png" id="1_uslum"]
+[ext_resource type="Texture2D" uid="uid://c20xg03uxpta3" path="res://Platform Game Assets/Water Animation/png/1x/image 2.png" id="2_myjaj"]
+[ext_resource type="Texture2D" uid="uid://dtipys47yv2bd" path="res://Platform Game Assets/Water Animation/png/1x/image 3.png" id="3_xa8yq"]
+[ext_resource type="Texture2D" uid="uid://b7r3ka28s8gsd" path="res://Platform Game Assets/Water Animation/png/1x/image 4.png" id="4_yoo2u"]
+[ext_resource type="Texture2D" uid="uid://yvbs8xewqxcj" path="res://Platform Game Assets/Water Animation/png/1x/image 5.png" id="5_vfgqn"]
+[ext_resource type="Texture2D" uid="uid://biyd32kq4f7w8" path="res://Platform Game Assets/Water Animation/png/1x/image 6.png" id="6_ydw62"]
+[ext_resource type="Texture2D" uid="uid://d24bu1t0piyg3" path="res://Platform Game Assets/Water Animation/png/1x/image 7.png" id="7_cvp26"]
+[ext_resource type="Texture2D" uid="uid://4kj4xklus8sb" path="res://Platform Game Assets/Water Animation/png/1x/image 8.png" id="8_vju24"]
+[ext_resource type="Texture2D" uid="uid://clcs68y8wmvi6" path="res://Platform Game Assets/Water Animation/png/1x/image 9.png" id="9_pc207"]
+[ext_resource type="Texture2D" uid="uid://4firhcitv8vf" path="res://Platform Game Assets/Water Animation/png/1x/image 10.png" id="10_y6k1l"]
+[ext_resource type="Texture2D" uid="uid://crbcguj5daurf" path="res://Platform Game Assets/Water Animation/png/1x/image 11.png" id="11_gwmvf"]
+[ext_resource type="Texture2D" uid="uid://blrxsij2bvckx" path="res://Platform Game Assets/Water Animation/png/1x/image 12.png" id="12_rs8ck"]
+[ext_resource type="Texture2D" uid="uid://wgt11qtgvbel" path="res://Platform Game Assets/Water Animation/png/1x/image 13.png" id="13_y2fvu"]
+[ext_resource type="Texture2D" uid="uid://uby46pg2xj11" path="res://Platform Game Assets/Water Animation/png/1x/image 14.png" id="14_xbhiy"]
+[ext_resource type="Texture2D" uid="uid://0qjo7p4obiqw" path="res://Platform Game Assets/Water Animation/png/1x/image 15.png" id="15_aunlx"]
+[ext_resource type="Texture2D" uid="uid://xvgcay0ftl8o" path="res://Platform Game Assets/Water Animation/png/1x/image 16.png" id="16_uhaut"]
+[ext_resource type="Texture2D" uid="uid://djauu55fm361e" path="res://Platform Game Assets/Water Animation/png/1x/image 17.png" id="17_vkmrg"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5kyet"]
+atlas = ExtResource("1_uslum")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4c0k7"]
+atlas = ExtResource("2_myjaj")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ld6o0"]
+atlas = ExtResource("3_xa8yq")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pasnn"]
+atlas = ExtResource("4_yoo2u")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c6op3"]
+atlas = ExtResource("5_vfgqn")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l3f68"]
+atlas = ExtResource("6_ydw62")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rqjms"]
+atlas = ExtResource("7_cvp26")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dc0y1"]
+atlas = ExtResource("8_vju24")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uu8wd"]
+atlas = ExtResource("9_pc207")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d55w6"]
+atlas = ExtResource("10_y6k1l")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cy1dr"]
+atlas = ExtResource("11_gwmvf")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gxsxj"]
+atlas = ExtResource("12_rs8ck")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ssmxa"]
+atlas = ExtResource("13_y2fvu")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4g748"]
+atlas = ExtResource("14_xbhiy")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ruq2g"]
+atlas = ExtResource("15_aunlx")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_awjro"]
+atlas = ExtResource("16_uhaut")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xu81b"]
+atlas = ExtResource("17_vkmrg")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_20004"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5kyet")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4c0k7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ld6o0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pasnn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c6op3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l3f68")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rqjms")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dc0y1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uu8wd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d55w6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cy1dr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gxsxj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ssmxa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4g748")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ruq2g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_awjro")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xu81b")
+}],
+"loop": true,
+"name": &"Water",
+"speed": 13.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d87re"]
+size = Vector2(128.477, 113.362)
+
+[node name="Water" type="Area2D"]
+script = ExtResource("1_uryss")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(1344, 14216)
+scale = Vector2(67.1016, 34.5)
+sprite_frames = SubResource("SpriteFrames_20004")
+animation = &"Water"
+autoplay = "Water"
+frame_progress = 0.10991
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1365.5, 14468.5)
+scale = Vector2(67.1016, 34.5)
+shape = SubResource("RectangleShape2D_d87re")

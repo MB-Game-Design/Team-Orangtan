@@ -1,0 +1,202 @@
+[gd_scene load_steps=39 format=3 uid="uid://hant3ypjiomp"]
+
+[ext_resource type="Texture2D" uid="uid://du2rhlmtitmrr" path="res://Assets/Bomb Timer/Player Sprites/Jump.png" id="1_8verg"]
+[ext_resource type="Script" path="res://Player/Player.gd" id="1_ta3c5"]
+[ext_resource type="Texture2D" uid="uid://ji8cc3nvrwsl" path="res://Assets/Bomb Timer/Player Sprites/Player 1.png" id="2_nux6t"]
+[ext_resource type="Texture2D" uid="uid://c2afn6fg2slpw" path="res://Assets/Bomb Timer/Player Sprites/Player 2.png" id="3_ja5oh"]
+[ext_resource type="Texture2D" uid="uid://f4hmgkdj6s2e" path="res://Assets/Bomb Timer/Player Sprites/Player 3.png" id="4_27klh"]
+[ext_resource type="Texture2D" uid="uid://ci3r1r5rksl4g" path="res://Assets/Bomb Timer/Player Sprites/Player 4.png" id="5_0x066"]
+[ext_resource type="Texture2D" uid="uid://cni6tq5xpvi65" path="res://Assets/Bomb Timer/Player Sprites/Player 5.png" id="6_v2ggi"]
+[ext_resource type="Texture2D" uid="uid://iil8o8jhg1oo" path="res://Assets/Bomb Timer/Player Sprites/Player 6.png" id="7_h3k5u"]
+[ext_resource type="Texture2D" uid="uid://bux1bsdmwnyx3" path="res://Assets/Bomb Timer/Player Sprites/Player 7.png" id="8_s8ejq"]
+[ext_resource type="Texture2D" uid="uid://bycpbi8ujy8o5" path="res://Assets/Bomb Timer/Player Sprites/Walk 1.png" id="9_y74ap"]
+[ext_resource type="Texture2D" uid="uid://c30i2irequiqe" path="res://Assets/Bomb Timer/Player Sprites/Walk 2.png" id="10_m78pd"]
+[ext_resource type="Texture2D" uid="uid://b7t2jqcqjqomy" path="res://Assets/Bomb Timer/Player Sprites/Walk 3.png" id="11_6gwaw"]
+[ext_resource type="Script" path="res://Player/StateMachine.gd" id="12_r1vpg"]
+[ext_resource type="Script" path="res://Player/Idle.gd" id="13_svgtn"]
+[ext_resource type="Script" path="res://Player/Moving.gd" id="14_ow0c4"]
+[ext_resource type="Script" path="res://Player/Jumping.gd" id="15_byenf"]
+[ext_resource type="Script" path="res://Player/Falling.gd" id="16_xba3f"]
+[ext_resource type="Texture2D" uid="uid://dupnmwtscnf14" path="res://Assets/Bomb Timer/Timer 1.png" id="18_u1q4q"]
+[ext_resource type="Texture2D" uid="uid://b1bcf21bewru0" path="res://Assets/Bomb Timer/Timer 2.png" id="19_g06l2"]
+[ext_resource type="Texture2D" uid="uid://s783keh5fji2" path="res://Assets/Bomb Timer/Timer 3.png" id="20_c8euq"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dwt8b"]
+atlas = ExtResource("1_8verg")
+region = Rect2(0, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hbgso"]
+atlas = ExtResource("2_nux6t")
+region = Rect2(0, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rlbm5"]
+atlas = ExtResource("3_ja5oh")
+region = Rect2(0, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hp8d7"]
+atlas = ExtResource("4_27klh")
+region = Rect2(0, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xgknk"]
+atlas = ExtResource("5_0x066")
+region = Rect2(0, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e2nud"]
+atlas = ExtResource("6_v2ggi")
+region = Rect2(0, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tvm6w"]
+atlas = ExtResource("7_h3k5u")
+region = Rect2(0, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xvxp8"]
+atlas = ExtResource("8_s8ejq")
+region = Rect2(0, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uae18"]
+atlas = ExtResource("1_8verg")
+region = Rect2(0, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ljq30"]
+atlas = ExtResource("9_y74ap")
+region = Rect2(0, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fhads"]
+atlas = ExtResource("10_m78pd")
+region = Rect2(0, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5m2af"]
+atlas = ExtResource("11_6gwaw")
+region = Rect2(0, 0, 100, 100)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ao05v"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dwt8b")
+}],
+"loop": true,
+"name": &"Falling",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hbgso")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rlbm5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hp8d7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xgknk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e2nud")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tvm6w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xvxp8")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uae18")
+}],
+"loop": true,
+"name": &"Jumping",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ljq30")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fhads")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5m2af")
+}],
+"loop": true,
+"name": &"Moving",
+"speed": 6.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_36e2l"]
+radius = 30.0
+height = 60.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cuf88"]
+atlas = ExtResource("18_u1q4q")
+region = Rect2(0, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_81bd1"]
+atlas = ExtResource("19_g06l2")
+region = Rect2(0, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7suig"]
+atlas = ExtResource("20_c8euq")
+region = Rect2(0, 0, 100, 100)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_h02c3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cuf88")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_81bd1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7suig")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Player" type="CharacterBody2D"]
+position = Vector2(24, 23)
+script = ExtResource("1_ta3c5")
+
+[node name="State" type="Label" parent="."]
+offset_left = -17.0
+offset_top = -74.0
+offset_right = 18.0
+offset_bottom = -51.0
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.58, 0.62)
+sprite_frames = SubResource("SpriteFrames_ao05v")
+animation = &"Falling"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_36e2l")
+
+[node name="StateMachine" type="Node" parent="."]
+script = ExtResource("12_r1vpg")
+
+[node name="Idle" type="Node" parent="StateMachine"]
+script = ExtResource("13_svgtn")
+
+[node name="Moving" type="Node" parent="StateMachine"]
+script = ExtResource("14_ow0c4")
+
+[node name="Jumping" type="Node" parent="StateMachine"]
+script = ExtResource("15_byenf")
+
+[node name="Falling" type="Node" parent="StateMachine"]
+script = ExtResource("16_xba3f")
+
+[node name="Camera" type="Camera2D" parent="."]
+
+[node name="Bomb_Timer" type="AnimatedSprite2D" parent="."]
+position = Vector2(3, -59.5)
+scale = Vector2(1, 0.97)
+sprite_frames = SubResource("SpriteFrames_h02c3")

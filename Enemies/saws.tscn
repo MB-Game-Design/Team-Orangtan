@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://btb5qbu44e2ky"]
+
+[ext_resource type="Texture2D" uid="uid://31101c0l46wo" path="res://Platform Game Assets/Enemies/png/128x128/Saw.png" id="1_d04xf"]
+[ext_resource type="Script" path="res://Enemies/saws.gd" id="1_e637c"]
+
+[node name="Saws" type="Area2D"]
+script = ExtResource("1_e637c")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_d04xf")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(358, -696)
+polygon = PackedVector2Array(-338, 756, -332, 754, -329, 743, -321, 734, -314, 740, -310, 735, -312, 723, -307, 711, -298, 715, -298, 707, -305, 699, -306, 685, -295, 685, -300, 678, -311, 675, -317, 664, -307, 657, -316, 653, -326, 655, -338, 648, -331, 639, -339, 638, -350, 645, -360, 645, -357, 633, -366, 638, -372, 646, -383, 652, -388, 642, -393, 650, -393, 661, -400, 668, -410, 662, -410, 673, -405, 682, -406, 693, -420, 690, -416, 701, -405, 707, -402, 717, -415, 722, -406, 728, -396, 729, -387, 736, -397, 746, -388, 748, -376, 744, -365, 747, -369, 758, -360, 756, -353, 748, -341, 746)
