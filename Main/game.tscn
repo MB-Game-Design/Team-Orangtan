@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://cbqjveagutmbc"]
+[gd_scene load_steps=34 format=3 uid="uid://cbqjveagutmbc"]
 
 [ext_resource type="Texture2D" uid="uid://sys1y8iy3b1i" path="res://Platform Game Assets/Background/png/2048x1536/Background/Background.png" id="1_47uvi"]
 [ext_resource type="Texture2D" uid="uid://bsebbhltkbovg" path="res://Assets/portal_start.png" id="1_rhrdn"]
@@ -6,10 +6,11 @@
 [ext_resource type="Texture2D" uid="uid://cdl6hjl8ywl7e" path="res://Platform Game Assets/Tiles/png/512x512/DirtDown.png" id="2_e6xh6"]
 [ext_resource type="Texture2D" uid="uid://dj3jpeopixuvk" path="res://Platform Game Assets/Tiles/png/128x128/GrassSample_2.png" id="4_0x8pq"]
 [ext_resource type="Texture2D" uid="uid://bwjitqlhd7o0r" path="res://Platform Game Assets/Environment/png/All/1x/Asset 1.png" id="4_6h652"]
-[ext_resource type="PackedScene" uid="uid://hant3ypjiomp" path="res://Player/Player.tscn" id="4_vuhdu"]
 [ext_resource type="Texture2D" uid="uid://c8kyvuuk3yjn2" path="res://Platform Game Assets/Environment/png/All/1x/Asset 2.png" id="5_5lmc7"]
 [ext_resource type="Texture2D" uid="uid://dt4gncnmcrcyh" path="res://Platform Game Assets/Tiles/png/512x512/Dirt.png" id="7_8h07u"]
 [ext_resource type="PackedScene" uid="uid://1dc244qfsq3c" path="res://Water/Water.tscn" id="9_xvmgq"]
+[ext_resource type="Script" path="res://Water/Water.gd" id="16_cj2yj"]
+[ext_resource type="PackedScene" uid="uid://btb5qbu44e2ky" path="res://Enemies/saws.tscn" id="17_dh44r"]
 [ext_resource type="Texture2D" uid="uid://30i6whq63n4n" path="res://Platform Game Assets/Environment/png/All/1x/Asset 8.png" id="25_tynuo"]
 [ext_resource type="Texture2D" uid="uid://b2b5l648vah21" path="res://Platform Game Assets/Environment/png/All/1x/Asset 15.png" id="26_vf333"]
 [ext_resource type="Texture2D" uid="uid://bdh5604v4djjq" path="res://Platform Game Assets/Environment/png/All/1x/Asset 12.png" id="27_u8wfj"]
@@ -1694,6 +1695,9 @@ sources/2 = SubResource("TileSetAtlasSource_cfytm")
 sources/4 = SubResource("TileSetAtlasSource_2fkgn")
 sources/3 = SubResource("TileSetAtlasSource_88tg4")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8ejej"]
+size = Vector2(4518, 2237)
+
 [node name="Game" type="Node2D"]
 
 [node name="Background" type="TileMap" parent="."]
@@ -1746,18 +1750,29 @@ Time Starts When You Drop.
 Hurry There's Not Much TIme !!"
 metadata/_edit_use_anchors_ = true
 
-[node name="Player" parent="." instance=ExtResource("4_vuhdu")]
-position = Vector2(17, 117)
+[node name="Spikes3" parent="." instance=ExtResource("31_woi78")]
+position = Vector2(173, 850)
+scale = Vector2(2, 2)
+
+[node name="Spikes2" parent="." instance=ExtResource("31_woi78")]
+position = Vector2(267, 848)
+scale = Vector2(2, 2)
 
 [node name="Spikes" parent="." instance=ExtResource("31_woi78")]
 position = Vector2(85, 848)
 scale = Vector2(2, 2)
 
-[node name="Spikes" parent="Spikes" instance=ExtResource("31_woi78")]
-position = Vector2(91, 0)
-
-[node name="Spikes2" parent="Spikes" instance=ExtResource("31_woi78")]
-position = Vector2(44, 1)
-
 [node name="Angry_Spike" parent="." instance=ExtResource("32_gt7gf")]
 position = Vector2(-329, 5268)
+
+[node name="Water" type="Area2D" parent="."]
+script = ExtResource("16_cj2yj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Water"]
+position = Vector2(623, 7313)
+shape = SubResource("RectangleShape2D_8ejej")
+
+[node name="Saws" parent="." instance=ExtResource("17_dh44r")]
+position = Vector2(1896, 3304)
+
+[connection signal="body_entered" from="Water" to="Water" method="_on_body_entered"]
