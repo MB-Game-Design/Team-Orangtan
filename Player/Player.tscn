@@ -165,12 +165,6 @@ animations = [{
 position = Vector2(24, 23)
 script = ExtResource("1_ta3c5")
 
-[node name="State" type="Label" parent="."]
-offset_left = -17.0
-offset_top = -74.0
-offset_right = 18.0
-offset_bottom = -51.0
-
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.58, 0.62)
 sprite_frames = SubResource("SpriteFrames_ao05v")
@@ -200,3 +194,14 @@ script = ExtResource("16_xba3f")
 position = Vector2(3, -59.5)
 scale = Vector2(1, 0.97)
 sprite_frames = SubResource("SpriteFrames_h02c3")
+
+[node name="State" type="Label" parent="."]
+offset_left = -17.0
+offset_top = -74.0
+offset_right = 18.0
+offset_bottom = -51.0
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
