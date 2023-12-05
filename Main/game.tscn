@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://cbqjveagutmbc"]
+[gd_scene load_steps=35 format=3 uid="uid://cbqjveagutmbc"]
 
 [ext_resource type="Texture2D" uid="uid://sys1y8iy3b1i" path="res://Platform Game Assets/Background/png/2048x1536/Background/Background.png" id="1_47uvi"]
 [ext_resource type="Texture2D" uid="uid://bsebbhltkbovg" path="res://Assets/portal_start.png" id="1_rhrdn"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://1dc244qfsq3c" path="res://Water/Water.tscn" id="9_xvmgq"]
 [ext_resource type="Script" path="res://Water/Water.gd" id="16_cj2yj"]
 [ext_resource type="PackedScene" uid="uid://btb5qbu44e2ky" path="res://Enemies/saws.tscn" id="17_dh44r"]
+[ext_resource type="AudioStream" uid="uid://bkif4h61gowrq" path="res://Assets/Death Game Jam.mp3" id="18_y7wkc"]
 [ext_resource type="Texture2D" uid="uid://30i6whq63n4n" path="res://Platform Game Assets/Environment/png/All/1x/Asset 8.png" id="25_tynuo"]
 [ext_resource type="Texture2D" uid="uid://b2b5l648vah21" path="res://Platform Game Assets/Environment/png/All/1x/Asset 15.png" id="26_vf333"]
 [ext_resource type="Texture2D" uid="uid://bdh5604v4djjq" path="res://Platform Game Assets/Environment/png/All/1x/Asset 12.png" id="27_u8wfj"]
@@ -1750,6 +1751,22 @@ Time Starts When You Drop.
 Hurry There's Not Much TIme !!"
 metadata/_edit_use_anchors_ = true
 
+[node name="Spikes7" parent="." instance=ExtResource("31_woi78")]
+position = Vector2(661, 5026)
+scale = Vector2(8, 8)
+
+[node name="Spikes6" parent="." instance=ExtResource("31_woi78")]
+position = Vector2(1123, 2313)
+scale = Vector2(4, 4)
+
+[node name="Spikes5" parent="." instance=ExtResource("31_woi78")]
+position = Vector2(945, 3254)
+scale = Vector2(5, 5)
+
+[node name="Spikes4" parent="." instance=ExtResource("31_woi78")]
+position = Vector2(-397, 3276)
+scale = Vector2(5, 5)
+
 [node name="Spikes3" parent="." instance=ExtResource("31_woi78")]
 position = Vector2(173, 850)
 scale = Vector2(2, 2)
@@ -1762,8 +1779,28 @@ scale = Vector2(2, 2)
 position = Vector2(85, 848)
 scale = Vector2(2, 2)
 
-[node name="Angry_Spike" parent="." instance=ExtResource("32_gt7gf")]
+[node name="Angry_Spike7" parent="." instance=ExtResource("32_gt7gf")]
+position = Vector2(-90, 6054)
+scale = Vector2(5, 5)
+
+[node name="Angry_Spike6" parent="." instance=ExtResource("32_gt7gf")]
+position = Vector2(1663, 3384)
+scale = Vector2(0.2, 0.2)
+
+[node name="Angry_Spike5" parent="." instance=ExtResource("32_gt7gf")]
+position = Vector2(1389, 4517)
+
+[node name="Angry_Spike3" parent="." instance=ExtResource("32_gt7gf")]
 position = Vector2(-329, 5268)
+
+[node name="Angry_Spike4" parent="." instance=ExtResource("32_gt7gf")]
+position = Vector2(1804, 1687)
+
+[node name="Angry_Spike2" parent="." instance=ExtResource("32_gt7gf")]
+position = Vector2(1914, 5512)
+
+[node name="Angry_Spike" parent="." instance=ExtResource("32_gt7gf")]
+position = Vector2(1358, 5518)
 
 [node name="Water" type="Area2D" parent="."]
 script = ExtResource("16_cj2yj")
@@ -1772,7 +1809,30 @@ script = ExtResource("16_cj2yj")
 position = Vector2(623, 7313)
 shape = SubResource("RectangleShape2D_8ejej")
 
+[node name="Saws7" parent="." instance=ExtResource("17_dh44r")]
+position = Vector2(-291, 1747)
+scale = Vector2(2, 2)
+
+[node name="Saws6" parent="." instance=ExtResource("17_dh44r")]
+position = Vector2(1669, 2623)
+scale = Vector2(1.2, 1.2)
+
+[node name="Saws5" parent="." instance=ExtResource("17_dh44r")]
+position = Vector2(896, 1297)
+
+[node name="Saws4" parent="." instance=ExtResource("17_dh44r")]
+position = Vector2(-37, 2143)
+
+[node name="Saws3" parent="." instance=ExtResource("17_dh44r")]
+position = Vector2(237, 3900)
+
+[node name="Saws2" parent="." instance=ExtResource("17_dh44r")]
+position = Vector2(497, 1245)
+
 [node name="Saws" parent="." instance=ExtResource("17_dh44r")]
 position = Vector2(1896, 3304)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("18_y7wkc")
 
 [connection signal="body_entered" from="Water" to="Water" method="_on_body_entered"]

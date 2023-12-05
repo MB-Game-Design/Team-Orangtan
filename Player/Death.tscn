@@ -143,12 +143,12 @@ animations = [{
 radius = 29.0
 height = 82.0
 
-[node name="CharacterBody2D" type="CharacterBody2D"]
+[node name="Death" type="CharacterBody2D"]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_8j8xe")
 animation = &"Death"
-frame_progress = 0.925415
+frame_progress = 0.274553
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_ygjuy")

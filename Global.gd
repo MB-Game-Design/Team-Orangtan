@@ -1,8 +1,8 @@
 extends Node
 
 var fade = null
-var fade_speed = 0.015
-
+var fade_speed = 0.020
+var time = 0
 var fade_in = false
 var fade_out = ""
 
@@ -41,6 +41,30 @@ func execute_fade_out(_target):
 		if fade.color.a >= 1:
 			fade_out = ""
 			
+
+func update_time(t):
+	time += t
+	var HUD = get_node_or_null("/root/Game/UI/HUD")
+	if HUD != null:
+		HUD.update_time()
+	if time <= 0:
+		end_game(false)
+
+
+func _input(event):
+	if event.is_action_pressed("menu"):
+		var Pause_Menu = get_node_or_null("/root/Game/UI/Pause_Menu")
+		if Pause_Menu:
+			get_tree().quit()
+		else:
+			if Pause_Menu.visible:
+				Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+				get_tree().paused = false
+				Pause_Menu.hide()
+			else:
+				Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+				get_tree().paused = true
+				Pause_Menu.show()
 
 
 func _unhandled_input(event):
