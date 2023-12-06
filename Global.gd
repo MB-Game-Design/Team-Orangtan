@@ -48,11 +48,12 @@ func update_time(t):
 	if HUD != null:
 		HUD.update_time()
 	if time <= 0:
-		end_game(false)
+		time = 1000
+		get_tree().change_scene_to_file("res://UI/end_game.tscn")
 
 
 func _input(event):
-	if event.is_action_pressed("menu"):
+	if event.is_action_pressed("Pause"):
 		var Pause_Menu = get_node_or_null("/root/Game/UI/Pause_Menu")
 		if Pause_Menu:
 			get_tree().quit()

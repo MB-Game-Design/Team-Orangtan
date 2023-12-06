@@ -13,13 +13,12 @@ var direction = 1
 
 func _ready():
 	up_direction = Vector2.UP
+	Global.time = 100
 
 func _physics_process(_delta):
 	if direction < 0 and not $AnimatedSprite2D.flip_h: $AnimatedSprite2D.flip_h = true
 	if direction > 0 and $AnimatedSprite2D.flip_h: $AnimatedSprite2D.flip_h = false
-	
-	if $State.text != SM.state_name:
-		$State.text = SM.state_name
+	$State.text = str(Global.time)
 
 func set_direction(d):
 	direction = d
@@ -30,3 +29,7 @@ func set_animation(anim):
 	else: $AnimatedSprite2D.play()
 
 	move_and_slide()
+
+
+func _on_timer_timeout():
+	Global.update_time(-1)
