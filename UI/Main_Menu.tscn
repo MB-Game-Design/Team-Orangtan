@@ -1,24 +1,9 @@
-[gd_scene load_steps=13 format=3 uid="uid://ycdwti4hlg5d"]
+[gd_scene load_steps=12 format=3 uid="uid://ycdwti4hlg5d"]
 
 [ext_resource type="Script" path="res://UI/Main_Menu.gd" id="1_hi6la"]
-[ext_resource type="Shader" path="res://Menu.gdshader" id="2_cftph"]
+[ext_resource type="Texture2D" uid="uid://fpl0ru5m07hv" path="res://Platform Game Assets/Background/png/1920x1080/Background/Background.png" id="2_by553"]
 [ext_resource type="FontFile" uid="uid://t0fy7fxlihue" path="res://pat-pacool/Pat-PaCool.otf" id="3_vm0g7"]
-
-[sub_resource type="GDScript" id="GDScript_hsswo"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_atwq0"]
-shader = ExtResource("2_cftph")
-shader_parameter/OCTAVE = 6
-shader_parameter/mulscale = 5.0
-shader_parameter/height = 0.4
-shader_parameter/tide = 0.1
-shader_parameter/foamthickness = 0.1
-shader_parameter/timescale = 1.0
-shader_parameter/waterdeep = 0.3
-shader_parameter/WATER_COL = Color(0, 33.7, 24.2, 1)
-shader_parameter/WATER2_COL = Color(225, 0, 225, 0)
-shader_parameter/FOAM_COL = Color(225, 225, 225, 1)
-script = SubResource("GDScript_hsswo")
+[ext_resource type="AudioStream" uid="uid://dupprfxvbsss1" path="res://Assets/Title screen game jam.mp3" id="4_a83sx"]
 
 [sub_resource type="Theme" id="Theme_4bdfl"]
 default_font = ExtResource("3_vm0g7")
@@ -57,18 +42,18 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_hi6la")
 
-[node name="Background" type="ColorRect" parent="."]
-material = SubResource("ShaderMaterial_atwq0")
-layout_mode = 0
-offset_right = 1152.0
-offset_bottom = 648.0
-color = Color(1, 1, 1, 0)
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(587, 321)
+texture = ExtResource("2_by553")
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
-offset_bottom = 120.0
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 1.0
+offset_bottom = 121.0
 grow_horizontal = 2
 theme = SubResource("Theme_4bdfl")
 text = "TEST YOUR SPEED!!"
@@ -77,17 +62,23 @@ horizontal_alignment = 1
 [node name="Button" type="Button" parent="."]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.375
-anchor_top = 0.431
-anchor_right = 0.63
-anchor_bottom = 0.6
-offset_left = 8.7738e-05
-offset_top = -0.287985
-offset_right = -251.76
-offset_bottom = -92.8
+anchor_left = 0.391
+anchor_top = 0.418
+anchor_right = 0.5
+anchor_bottom = 0.497
+offset_left = -0.432037
+offset_top = 0.135992
+offset_right = -84.0
+offset_bottom = -34.056
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(7, 7)
+scale = Vector2(3, 3)
 theme = SubResource("Theme_ltowt")
 text = "START"
 flat = true
+
+[node name="Main_Menu_Sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_a83sx")
+autoplay = true
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

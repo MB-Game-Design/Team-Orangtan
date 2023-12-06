@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=3 uid="uid://hant3ypjiomp"]
+[gd_scene load_steps=41 format=3 uid="uid://hant3ypjiomp"]
 
 [ext_resource type="Texture2D" uid="uid://du2rhlmtitmrr" path="res://Assets/Bomb Timer/Player Sprites/Jump.png" id="1_8verg"]
 [ext_resource type="Script" path="res://Player/Player.gd" id="1_ta3c5"]
@@ -20,6 +20,7 @@
 [ext_resource type="Texture2D" uid="uid://dupnmwtscnf14" path="res://Assets/Bomb Timer/Timer 1.png" id="18_u1q4q"]
 [ext_resource type="Texture2D" uid="uid://b1bcf21bewru0" path="res://Assets/Bomb Timer/Timer 2.png" id="19_g06l2"]
 [ext_resource type="Texture2D" uid="uid://s783keh5fji2" path="res://Assets/Bomb Timer/Timer 3.png" id="20_c8euq"]
+[ext_resource type="FontFile" uid="uid://t0fy7fxlihue" path="res://pat-pacool/Pat-PaCool.otf" id="21_ytjeg"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dwt8b"]
 atlas = ExtResource("1_8verg")
@@ -161,6 +162,11 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="Theme" id="Theme_af5md"]
+default_font = ExtResource("21_ytjeg")
+default_font_size = 22
+Label/fonts/font = ExtResource("21_ytjeg")
+
 [node name="Player" type="CharacterBody2D"]
 position = Vector2(24, 23)
 script = ExtResource("1_ta3c5")
@@ -196,12 +202,14 @@ scale = Vector2(1, 0.97)
 sprite_frames = SubResource("SpriteFrames_h02c3")
 
 [node name="State" type="Label" parent="."]
-offset_left = -17.0
+anchors_preset = -1
+offset_left = -14.0
 offset_top = -74.0
-offset_right = 18.0
-offset_bottom = -51.0
+offset_right = 10.0
+offset_bottom = -48.0
+theme = SubResource("Theme_af5md")
 
-[node name="Timer" type="Timer" parent="."]
+[node name="Timer" type="Timer" parent="State"]
 autostart = true
 
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="State/Timer" to="." method="_on_timer_timeout"]

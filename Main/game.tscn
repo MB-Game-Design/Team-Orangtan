@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://cbqjveagutmbc"]
+[gd_scene load_steps=36 format=3 uid="uid://cbqjveagutmbc"]
 
 [ext_resource type="Texture2D" uid="uid://sys1y8iy3b1i" path="res://Platform Game Assets/Background/png/2048x1536/Background/Background.png" id="1_47uvi"]
 [ext_resource type="Texture2D" uid="uid://bsebbhltkbovg" path="res://Assets/portal_start.png" id="1_rhrdn"]
@@ -11,7 +11,8 @@
 [ext_resource type="PackedScene" uid="uid://1dc244qfsq3c" path="res://Water/Water.tscn" id="9_xvmgq"]
 [ext_resource type="Script" path="res://Water/Water.gd" id="16_cj2yj"]
 [ext_resource type="PackedScene" uid="uid://btb5qbu44e2ky" path="res://Enemies/saws.tscn" id="17_dh44r"]
-[ext_resource type="AudioStream" uid="uid://ln24hklucsas" path="res://Assets/Death Game Jam.mp3" id="18_y7wkc"]
+[ext_resource type="AudioStream" uid="uid://c55r8n4041a13" path="res://Assets/Game Jam.mp3" id="18_fhc8v"]
+[ext_resource type="AudioStream" uid="uid://bhcub2de3ou0n" path="res://Assets/hq-explosion-6288.mp3" id="19_14hio"]
 [ext_resource type="Texture2D" uid="uid://30i6whq63n4n" path="res://Platform Game Assets/Environment/png/All/1x/Asset 8.png" id="25_tynuo"]
 [ext_resource type="Texture2D" uid="uid://b2b5l648vah21" path="res://Platform Game Assets/Environment/png/All/1x/Asset 15.png" id="26_vf333"]
 [ext_resource type="Texture2D" uid="uid://bdh5604v4djjq" path="res://Platform Game Assets/Environment/png/All/1x/Asset 12.png" id="27_u8wfj"]
@@ -1833,7 +1834,11 @@ position = Vector2(497, 1245)
 [node name="Saws" parent="." instance=ExtResource("17_dh44r")]
 position = Vector2(1896, 3304)
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("18_y7wkc")
+[node name="Game_Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("18_fhc8v")
+autoplay = true
+
+[node name="die_sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("19_14hio")
 
 [connection signal="body_entered" from="Water" to="Water" method="_on_body_entered"]

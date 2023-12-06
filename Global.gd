@@ -48,8 +48,8 @@ func update_time(t):
 	if HUD != null:
 		HUD.update_time()
 	if time <= 0:
-		time = 1000
-		get_tree().change_scene_to_file("res://UI/end_game.tscn")
+		time = 45
+		get_tree().change_scene_to_file("res://UI/game_over.tscn")
 
 
 func _input(event):

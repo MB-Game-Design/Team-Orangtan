@@ -13,7 +13,7 @@ var direction = 1
 
 func _ready():
 	up_direction = Vector2.UP
-	Global.time = 100
+	Global.time = 45
 
 func _physics_process(_delta):
 	if direction < 0 and not $AnimatedSprite2D.flip_h: $AnimatedSprite2D.flip_h = true

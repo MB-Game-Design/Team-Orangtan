@@ -7,10 +7,10 @@
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_stusi"]
 shader = ExtResource("2_aqvug")
-shader_parameter/TWOPI = 6.28319
+shader_parameter/TWOPI = 5.283
 shader_parameter/NUM_EXPLOSIONS = 10.0
 shader_parameter/NUM_PARTICLES = 75.0
-shader_parameter/MOD3 = Vector3(0.1031, 0.11369, 0.13787)
+shader_parameter/MOD3 = Vector3(52.103, 15.114, 12.138)
 
 [sub_resource type="Theme" id="Theme_pu2lr"]
 default_font = ExtResource("2_fjvuq")
